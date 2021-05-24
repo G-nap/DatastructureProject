@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+{% block content %}
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <h4>Search by student ID : </h4>
+            <form action="searchInAllStudent" method="post">
+                {% csrf_token %}
+                <div class = "from-group">
+                    <input type="text" class = "form-control" name="studentID">
+                </div>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-info text-white">
+            </form>
+            <br>
+            {% if messages %}
+                <center>
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in messages %}
+                            <b>{{message}}</b>
+                        {% endfor %}
+                    </div>
+                </center>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+
+    <h1 style="display: inline;"> <img src="{% static '13.png' %}" alt="..." width="70" height="auto "></h1>
+    <h1 style="display: inline;">&nbsp; All Student</h1>
+    
+
+    <ul>
+        <br>
+        {% for i in allStudent %}
+        <li>
+            <p>{{i}}</p> 
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
