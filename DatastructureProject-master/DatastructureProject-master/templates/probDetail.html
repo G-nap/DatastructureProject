@@ -29,12 +29,16 @@
         margin: 20px;
         text-align: right;
     }
+    .btnChange{
+    border-radius: 25px;
+    width: 130px;
+  }
 </style>
 
 <div class="container">
 
     <div class="box my-4">
-        <h1 style="display: inline;"><b>PROBABILITY AND STATISTIC</b></h1>
+        <h1 style="display: inline;">PROBABILITY AND STATISTIC</h1>
     </div>
 
 
@@ -51,10 +55,10 @@
     <br>
     <div class="butt">
         {% if user.is_authenticated %}
-        <a href="/problogin" class="btn btn-dark text-white">Join Here</a>
+        <a href="/problogin" class="btnChange btn btn-dark text-white">Join Here</a>
         {% else %}
         <h5>Please login First</h5>
-        <a href="/loginGet" class="btn btn-dark text-white">Login Here</a>
+        <a href="/loginGet" class="btnChange btn btn-dark text-white">Login Here</a>
         {% endif %}
     </div>
 </div>
